@@ -1,0 +1,125 @@
+% CSC 250 LaTeX Examples
+
+\documentclass[12pt]{article}
+
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{amssymb}%
+\usepackage{amsmath}%
+%\usepackage{pb-diagram}%
+\usepackage{amscd}%
+\usepackage{graphicx}
+\usepackage{mathdesign}
+\usepackage[total={6in,9.7in},centering]{geometry}
+
+\pagestyle{empty}
+
+\setlength{\parindent}{0pt}
+
+%here we can declare our own commands
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\begin{document}
+
+\begin{center}
+CSC 250 \qquad Examples
+\end{center}
+
+%using the enumeration package we can enumerate in any way we want
+\begin{enumerate}[I.)]
+\item Examples of numeration, some symbols and using our declared commands\\
+%example of using the \newcommand at the top
+$a\in \mathbb{Z}$\\
+$a\in\ZZ$
+
+%some math commands
+$\leq$ less than or equal to\\
+$<$ less than\\
+$\geq$ greater than or equal to\\
+$>$ greater than
+
+\item next problem
+
+\end{enumerate}
+
+
+\begin{center}
+Solutions
+\end{center}
+\begin{enumerate}[1.)]
+\item (Problem 17.a \S1.1)\\
+Prove the statement by using the indirect approach of proof by contradiction. In   the proof, come up with the contradiction that 1  is an even number.\\
+
+``If $x$ and $y$ are even, then $x+y$ is even.''
+
+\begin{proof}
+Let $x$ and $y$ be even. Then $x=2k$ and $y=2h$ for some $h,\ k\in\ZZ$.\\
+Now assume, to the contrary, that $x+y$ is odd, then $x+y=2z+1$ for some $z\in\ZZ$. So, we have
+\[x+y=2z+1,\]
+and by using substitution,
+\[2k+2h=2z+1\]
+\[2k+2h-2z=1\]
+\[2(k+h-z)=1.\]
+Thus, by this equality, 1 is an even number, which is never true. Hence, we have a contradiction.
+
+Therefore, if $x$ and $y$ are even, then $x+y$ is even.
+
+
+\end{proof}
+
+
+%================================================================================
+
+
+
+
+
+\newpage
+\item (Problem 4.g \S1.1)\\
+Write down a contrapositive version for each of the following conditional statements.
+
+``If $x>0$ and $y>0$, then $x+y>0$.''
+
+Answer:\\
+``If $x+y\leq 0$, then $x\leq 0$ or $y\leq 0$.''\\
+
+For the answer, we do no have to write this below, I am stating this here to establish a train of thought:\\
+
+For the usual idea of ``If $A$, then $B$,'' we can take this apart and we have
+\[A=``x>0 \text{ and } y>0''\]
+and
+\[B=``x+y>0.''\]
+Lets take take the negation of these:\\
+Since $A$ is a statement of two conditions, we use MeMorgan's Law here ($\neg(C\text{ and }D)=\neg C\text{ or } \neg D$)
+\[\neg A=``x\leq 0 \text{ or } y\leq 0,''\]
+and
+\[\neg B=``x+y\leq 0.''\]
+Now we simply use this to say  ``If $\neg B$, then $\neg A$.''
+
+
+%================================================================================
+
+\vskip 1in
+
+\item (Problem 7.a \S1.1)\\
+Prove or disprove the following statement by exhaustive checking.
+
+``There is a prime number between $45$ and $54$.''
+
+\begin{proof}$\ $\\
+Starting our checking at $46$:\\
+$46=2\times 23.$\\
+$47$ is a prime (1 and 47 are its only divisors). 
+
+Therefore the statement is true.
+
+\end{proof}
+
+
+
+
+\end{enumerate}
+
+
+\end{document} 

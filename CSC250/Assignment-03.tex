@@ -1,0 +1,143 @@
+\documentclass[12pt]{article}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{amssymb}%
+\usepackage{amsmath}%
+\usepackage{pb-diagram}%
+\usepackage{amscd}%
+\usepackage{graphicx}
+\usepackage{mathdesign}
+
+\usepackage[total={6in,9.7in},centering]{geometry}
+
+\pagestyle{empty}
+
+\setlength{\parindent}{0pt}
+
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\MOD}{\mathrm{mod}}
+\begin{document}
+
+\begin{center}
+\textsc{CSC 250 \\ Assignment \#3}\\
+\textsc{Wahab Ehsan}
+\end{center}
+
+
+
+
+
+%============================================================================================
+
+
+\begin{enumerate}
+\item (Problem 1.b \S 3.1)\\
+For the following inductive definition, start with the basis elements and construct 10 more elements in the set:\\
+
+\textbf{Basis: }$1\in S$. \textbf{Induction: }If $x\in S$, $2x$, $2x+1\in S$.
+ \\ Answer : $\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11\}$
+
+
+
+
+
+
+
+
+%============================================================================================
+
+
+\item (Problem 2.b \S 3.1)\\
+Find an inductive definition for the following set:
+
+\[\{0,2,4,6,8,\ldots\}\]
+Answer : 
+\textbf{Basis: }$0\in S$. \textbf{Induction: }If $x\in S$, then $x+2 \in S$.
+
+
+
+
+
+
+
+
+%============================================================================================
+
+
+\item (Problem 6.d \S 3.1)\\
+Find an inductive definition for the following set of strings:
+
+\[\{a^mb^n\mid m,n\in\NN\}\]
+
+Answer :
+\textbf{Basis: }$a, b\in S$. \textbf{Induction: }If $x\in S$, then $axb\in S$.
+
+
+
+
+
+
+
+%============================================================================================
+
+
+\item (Problem 10.b \S 3.1)\\
+Find an inductive definition for the following set of lists. Use the $cons$ constructor:
+
+\[\{\langle1\rangle,\langle 2,1\rangle,\langle 3,2,1\rangle,\ldots\}\]
+
+Answer :
+\textbf{Basis: }$\langle 1 \rangle \in S$. \textbf{Induction: }If $L\in S$, then $ (head(L) + 1) :: L\in S$.
+
+
+%============================================================================================
+
+
+\item (Problem 2 \S 3.2)\\
+Given the following definition for the length of a list:
+\[length(L):= \text{ if } L=\langle\ \rangle \text{ then } 0 \text{ else } 1+length(tail(L)).\]
+
+Write down each step in the evaluation of $length(\langle r,s,t,u\rangle)$.
+
+\[length(\langle r,s,t,u\rangle)= 1+length(\langle s,t,u\rangle).\]
+\[ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =  1+1+length(\langle t,u\rangle).\]
+\[ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =  1+1+1+length(\langle u\rangle).\]
+\[ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =  1+1+1+1+length(\langle \rangle).\]
+\[ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \ \ \ =  1+1+1+1+0\]
+\[ \  =  4\]
+%============================================================================================
+
+
+\item (Problem 4.b \S 3.2)\\
+Construct a recursive definition for the following function, where all variables represent natural numbers:
+
+\[f(n)=floor(0/2)+floor(1/2)+\ldots+floor(n/2)\]
+Answer : 
+\[f(0)=0 \text{ and } f(n)=f(floor((n-1)/2)) + floor(n/2)\]
+
+
+%============================================================================================
+
+
+\item (Problem 5.b \S 3.2)\\
+Construct a recursive definition for the following string function of strings over the alphabet $\{a,b\}$:
+
+\[f(x)=xy\text{, where }y\text{ is the reverse of }x.\]
+Answer : 
+\[f(\Lambda)=\Lambda \text{ and }f(ax) = af(x)a \text{ and } f(bx) = bf(x)b \]
+
+
+
+
+
+
+
+
+
+\end{enumerate}
+\end{document} 

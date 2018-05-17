@@ -1,0 +1,336 @@
+\documentclass[12pt]{article}
+\usepackage{mathtools}
+\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage{amssymb}%
+\usepackage{amsmath}%
+\usepackage{pb-diagram}%
+\usepackage{amscd}%
+\usepackage{graphicx}
+\usepackage{mathdesign}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\usepackage[total={6in,9.7in},centering]{geometry}
+
+\pagestyle{empty}
+
+\setlength{\parindent}{0pt}
+
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\MOD}{\mathrm{mod}}
+\begin{document}
+
+\begin{center}
+\textsc{CSC 250 \\ Assignment \#5}\\
+\textsc{Wahab Ehsan}
+\end{center}
+
+
+
+
+
+%============================================================================================
+
+
+\begin{enumerate}
+\item (Problem 1 \S 5.1)\\
+For each program fragment, find an expression in terms of $n$ for the number of times that procedure $S$ is executed, where $n\in \NN$. (Hint: look at Example 3)
+\begin{enumerate}[a.]
+\setcounter{enumii}{1}
+\item $i:=1;\text{ while }i<n\text{ do }S(i);i:=i+4\text{ od}$
+\[\text{When i enters body k values } 1,5,9,...,4k-3\]
+\[\text{Where } 4k-3 < n\leq4k+3\]
+\[4k < n +3 \leq 4k+6\]
+\[k < (n+3)/4\leq k+\frac{3}{2}\]
+\[\text{Now using ceiling function, }k=\ceil{(n+3)/4}\]
+\\ Answer: Therefore , $k = \ceil{(n+3)/4}$
+\setcounter{enumii}{3}
+\item $i:=1;\text{ while }i\leq n\text{ do }S(i);i:=i+4\text{ od}$
+\[\text{When i enters body k values } 1,5,9,...,4k-3\]
+\[\text{Where } 4k-3 \leq n < 4k+3\]
+\[4k \leq n +3 < 4k+6\]
+\[k \leq (n+3)/4< k+\frac{3}{2}\]
+\[\text{Now using floor function, }k=\floor{(n+3)/4}\]
+\\ Answer: Therefore , $k=\floor{(n+3)/4}$
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+%============================================================================================
+
+
+\item (Problem 2.b \S 5.1)\\
+For  the following program fragment, find an expression in terms of $n$ for the number of times that procedure $S$ is executed, where $n$ is a positive integer.
+
+\[i:=1;\text{ while }i\leq n\text{ do }S;i:=3i\text{ od}\]
+
+\[\text{When i enters body k values } 1,3,6,...,3k\]
+\[\text{Where } 3k \leq n < 3k+3\]
+\[k \leq \frac{n}{3} < k+1\]
+\[\text{Now using floor function, }k=\floor{(n/3)}\]
+\\ Answer: Therefore , $k=\floor{(n/3)}$
+
+
+
+
+
+
+
+
+%============================================================================================
+
+
+\item (Problem 7 \S 5.1)\\
+Suppose there are 95 possible answers to some problem. For each of the following types of decision tree, find a reasonable lower bound for the number of decisions necessary to solve the problem.
+\begin{enumerate}[a.]
+\setcounter{enumii}{1}
+\item Ternary tree. \\
+Answer: $5$ is the reasonable lower bound for the number of decision necessary.
+\item Four-way tree. \\
+Answer: $4$ is the reasonable lower bound for the number of decision necessary.
+\end{enumerate}
+
+
+
+
+
+
+
+%============================================================================================
+
+
+\item (Similar to Problem 2 \S 5.2)\\
+Given the following summation expression:
+\[\sum_{k=1}^ng(k-1)a_kx^{k+1}.\]
+For each of the following lower limits of summation, find an equivalent summation expression that starts with the lower limit:
+\begin{enumerate}[a.]
+\item k=2. \\
+Answer:
+ \[\sum_{k=2}^{n+1}g(k-2)a_{k-1}x^{k}.\]
+
+\item k=-3. \\
+Answer:
+\[\sum_{k=-3}^{n-4}g(k+3)a_{k+4}x^{k+5}.\]
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+%============================================================================================
+
+
+\item (Problem 3b \S 5.2)\\
+Find a closed form for the following sum:
+\[3+9+15+21+\ldots+(6n+3).\]
+Answer:
+\[\sum_{k=0}^{n}6k+3 = 3\sum_{k=0}^{n}2k+1 = 3(n(n+1) +1).\]
+
+
+
+
+%============================================================================================
+
+
+\item (Problem 8 \S 5.2)\\
+Use properties of sums and logs to calculate the given value for the following sum:
+\[\sum_{i=0}^{k-1}3^{2i}(1/5^i)^{\log_53}=(3^k-1)/2.\]
+\[\sum_{i=0}^{k-1}3^{2i}5^{-i\log_53}=(3^k-1)/2.\]
+\[\sum_{i=0}^{k-1}3^{2i}5^{\log_53^-i}=(3^k-1)/2.\]
+\[\sum_{i=0}^{k-1}3^{2i}3^{-i}=(3^k-1)/2.\]
+\[\sum_{i=0}^{k-1}3^{i}=(3^k-1)/2.\]
+\[\frac{3^{(k-1)+1}-1}{3-1}=(3^k-1)/2.\]
+\[(3^k-1)/2=(3^k-1)/2.\ \checkmark\]
+
+%============================================================================================
+
+
+
+\item (Problem 2 \S 5.3)\\
+Let $S=\{a,b,c\}$. Write down the objects satisfying each of the following descriptions.
+\begin{enumerate}[a.]
+\setcounter{enumii}{1}
+\item All permutations consisting of two letters from $S$. \\
+Answer: $ab, ac, ba, bc, ca, cb$
+\item All combinations consisting of two letters from $S$. \\ 
+Answer: $\{a,b\}, \{b,c\}$
+\end{enumerate}
+
+
+
+%============================================================================================
+
+
+
+
+
+
+
+\item (Problem 5a \S 5.3)\\
+Find the number of ways to arrange the letters in the following word.
+\[\text{\large Mississippi.}\]
+\[ \frac{11!}{4!4!2!1!}\]
+Answer: Total of $34,650$ ways.
+
+
+
+%============================================================================================
+
+
+
+
+
+
+
+
+\item (Problem 8 \S 5.3)\\
+We wish to form a committee of seven people chosen from five Democrats, four Republicans, and six Independents. The committee will contain two Democrats, two Republicans, and three Independents. In how many ways can we choose the committee?
+\[\binom{5+2-1}{2}+\binom{4+2-1}{2}+\binom{6+3-1}{3}\]
+\[\binom{6}{2}+\binom{5}{2}+\binom{8}{3}\]
+Answer: 81 different ways.
+%============================================================================================
+
+
+
+
+
+\item (Problem 2b \S 5.5)\\
+For the following definition, find a recurrence to describe the number of times $cons$ operation $::$ is called. Solve each recurrence.\\
+
+(\textbf{Note:} This definition of $dist$ is a bit different than what was defined on page 105, please pay attention to what it is doing.)\\
+
+\begin{tabular}{l c l}
+$dist(x,L)$&$=$&$\text{if } L=\langle\;\rangle\text{ then }\langle\;\rangle$\\
+&&$\text{else } (x::head(L)::\langle\;\rangle)::dist(x,tail(L))$
+\end{tabular}
+
+Answer: Let $a_n$ be the number of cons operations when $L$ has length $n$.Then $a_0=0$ and $a_n=a_{n-1}+n$.
+
+
+
+%============================================================================================
+
+
+
+
+
+
+
+\item (Problem 6b \S 5.5)\\
+Given the generating function $A(X)=\sum\limits_{n=0}^{\infty}a_nx^n$, find a closed form for the general term $a_n$ for the following representations of $A(x)$.
+\[A(x)=\frac{1}{2x+1}+\frac{1}{x+6}\]
+\[=\frac{1}{1+2x}+\frac{1}{1+(5+x)}\]
+\[=-\sum\limits_{n=0}^{\infty}(2x)^n - \sum\limits_{n=0}^{\infty}(5+x)^n\]
+\[=\sum\limits_{n=0}^{\infty}-(2x)^n - (5+x)^n\]
+%============================================================================================
+
+
+
+
+\item (Problem 7b \S 5.5)\\
+Use generating functions to solve the following recurrence:\\
+
+$a_0=0$,\\
+$a_1=1$,\\
+$a_n=7a_{n-1}-12a_{n-2}\ \ \ \  (n\geq 2)$
+
+\[A(x)=\sum\limits_{n=0}^{\infty}a_nx^n\]
+\[=a_0+a_1x+\sum\limits_{n=2}^{\infty}a_nx^n\]
+\[=(0)+(1)x+\sum\limits_{n=2}^{\infty}(7a_{n-1}-12a_{n-2})x^n\]
+\[=x+7\sum\limits_{n=2}^{\infty}a_{n-1}x^n-12\sum\limits_{n=2}^{\infty}a_{n-2}x^n\]
+\[=x+7x(A(x)-a_0)-12x^2A(x)\]
+\[=x+7xA(x)-12x^2A(x)\]
+\[A(x)(1-7x+12x^2)=x\]
+\[A(x)=\frac{x}{(1-7x+12x^2)}\]
+\[=\frac{x}{(3x-1)(4x-1)}\]
+\[=\frac{1}{(3x-1)}-\frac{1}{(4x-1)}\]
+\[=-\frac{1}{(1-3x)}+\frac{1}{(1-4x)}\]
+\[=-\sum\limits_{n=0}^{\infty}(3x)^n + \sum\limits_{n=0}^{\infty}(4x)^n\]
+\[=-\sum\limits_{n=0}^{\infty}3^nx^n + \sum\limits_{n=0}^{\infty}4^nx^n\]
+\[=\sum\limits_{n=0}^{\infty}(-3^n+4^n)x^n\]
+\[\sum\limits_{n=0}^{\infty}a_nx^n= \sum\limits_{n=0}^{\infty}(-3^n+4^n)x^n\]
+\[\text{Answer : }a_n=4^n-3^n \text{ for } n\geq 0\]
+\[\text{Checking : }a_0=4^0-3^0=0 \ \checkmark\]
+\[\text{Checking : } a_1=4^1-3^1=1 \ \checkmark\]
+\[\text{Checking : } 7a_{n-1}-12a_{n-2}=7(4^{n-1}-3^{n-1})-12(4^{n-2}-3^{n-2})=4^n-3^n=a_n \ \checkmark\]
+%============================================================================================
+
+
+
+
+
+
+
+\item (Problem 2b \S 5.6)\\
+Use the definition of big theta to prove the following statement:
+
+\[1-1/n=\Theta(1).\]
+Answer: $(1)(1)\leq 1-1/n\leq 2(1)$ for $n \geq 1$ 
+
+%============================================================================================
+
+
+
+\item (Problem 13 \S 5.6)\\
+Use (5.6.18) to approximate $T(n)$ for each of the following recurrences:
+\begin{enumerate}[a.]
+\setcounter{enumii}{3}
+\item $T(n)=2T(n/4)+\sqrt{n}/(\log n)^2.$ \\
+Answer: We have $a=2$ and $b=4$, which gives $\log_ba = 1/2$. Since $\alpha = 1/2$ it follows that $\alpha = \log_ba$. Since $\beta< -1$, it follows that $T(n)=\theta(n).$
+
+\setcounter{enumii}{5}
+\item $T(n)=3T(n/2)+n^2\log n.$ \\
+Answer: We have $a=3$ and $b=2$, which gives $\log_ba = 1.58$. Since $\alpha = 2$ it follows that $\alpha > \log_ba$. So, $T(n) = \theta(n^2\log n)$. 
+
+\end{enumerate}
+
+
+%============================================================================================
+
+
+
+
+\item (Problem 14b \S 5.6)\\
+Prove the following property of big oh:
+\[\text{If }f(n)=O(g(n))\text{ and } g(n)=O(h(n)).\text{ then } f(n)=O(h(n)).\]
+\proof
+Let there be constants for $f$, $c_f$ and for $g$, $c_g$. Let there also be $n$ for $f$ and $g$, $n_g$ and $n_f$, such that$f(n) \leq c_fg(n)$ and $g(n) \leq c_gh(n)$ for all $n \geq$ max of $n_f and n_g,$ therefore $f(n) \leq c_fg(n) \leq c_fc_gh(n)$, by setting the $c=c_fc_g$ and $n_0=max(n_f,n_g)$  
+\endproof
+
+%============================================================================================
+
+
+
+\item (Problem 14f \S 5.6)\\
+Prove the following property of big oh:
+\[\text{If }f_1(n)=O(g_1(n))\text{ and } f_2(n)=O(g_2(n)).\text{ then } f_1(n)f_2(n)=O(g_1(n)g_2(n)).\]
+\proof
+Let $f_1(n)=Og_1(n)$ and $f_2(n)=Og_2(n)$, then there must exist constants $c_{1},c_{2}$ and $n_1, n_2$, such that $f_1(n)\leq c_{1}g_1(n)$ for all $n > n_1$ and $f_2(n)\leq c_{2}g_2(n)$ for all $n > n_2$. Then $(f_1*f_2)(x)=f_1(x)*f_2(x) \leq c_1g_1(n)*c_2g_2(n) for all n > max(n_1,n_2) = (c_1*c_2)g_1(n)g_2(n)$, so $(f_1*f_2)(x)=O(g_1(n)g_2(n))$ if $c = c_1*c_2$ and $n_0 = max(n_1,n_2)$
+\endproof
+%============================================================================================
+
+
+
+
+\end{enumerate}
+\end{document} 
